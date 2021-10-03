@@ -1,0 +1,37 @@
+.card3 {
+  &__workshops {
+    background-image: linear-gradient(
+        rgba($color-secondary, 0.1),
+        rgba($color-secondary, 0.8)
+      ),
+      url(../images/carimage.jpg);
+    color: white;
+    background-size: cover;
+    background-position: center;
+    grid-column: full-start / col-end 4;
+    margin: 0.5rem 0.5rem 0.5rem 1rem;
+    padding: 6rem 8vw;
+
+    display: grid;
+    align-content: center;
+    justify-items: start;
+  }
+  &__news {
+    background-image: linear-gradient(
+        rgba($color-secondary, 0.1),
+        rgba($color-secondary, 0.8)
+      ),
+      url(../images/carimage4.jpg);
+    color: white;
+    background-size: cover;
+    background-position: center;
+
+    grid-column: col-start 5 / full-end;
+    padding: 6rem 8vw;
+    margin: 0.5rem 1rem 0.5rem 0.5rem;
+
+    display: grid;
+    align-content: center;
+    justify-items: start;
+  }
+}

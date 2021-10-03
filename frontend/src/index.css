@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+ *{
+     margin:0;
+     padding:0;
+     box-sizing: border-box;
+     font-family: muli;
+ }
+
+
+ /*--------------------------- Navbar CSS---------------------------*/
+
+ .navbar{
+     background-color: #fff !important;
+ }
+
+ .navbar-brand{
+     font-size: 1.9rem !important;
+     color: #565378 
+ }
+
+ .navbar a{
+     font-size: 1.3rem !important;
+     text-transform: capitalize;
+ }
+
+ .menu_active{
+     font-weight: bold;
+     border-bottom: 1px solid #565378;
+ }
+
+ .navbar a:hover{
+     color: rgb(25, 226, 226) !important;   
+ }
+
+
+
+ #header{
+     width: 100%;
+     height: 80vh;
+     margin-top: 70px
+ }
+
+ #header h1{
+     margin: 0 0 10px 0;
+     font-size: 50px;
+     color: black;
+ }
+
+ #header .brand-name{
+     color:  rgb(25, 226, 226);
+ }
+
+ #header h2{
+     color: rgb(22, 21, 21);
+     font-size:27px
+ }
+
+ #header .btn-get-started {
+     font-weight: 500;
+     font-size: 16px;
+     letter-spacing: 1px;
+     display: inline-block;
+     padding: 10px 30px;
+     border-radius: 50px;
+     transition: 0.5s;
+     border: 2px solid  rgb(25, 226, 226);
+     color: black;
+     font-size: 16px;
+     cursor: pointer;
+     text-decoration: none;
+    }
+
+ #header .btn-get-started:hover{
+     background-color:  rgb(25, 226, 226);
+     color: white ;
+ }
+
+ .header-img{
+     text-align: right;
+ } 
+
+ #header .animated{
+     animation: up-down 1.5s ease-in-out infinite alternate-reverse both;
+ }
+
+ @keyframes up-down{
+     0%{
+         transform: translateY(10px);
+     }
+     100%{
+         transform: translateY(-10px);
+     }
+ }
+
+.footer{
+     margin-top: 50px;
+ }
+
+.form{
+    text-align: center;
+    margin: 100px;
+    padding: 100px;
+}
+
+
+/*---------------------BUY CARS CSS----------------------------*/
+
+.cards{
+    width: 20%;
+    background-color: rgb(231, 231, 248);
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px;
+    display: inline-block;
+    margin: 70px;
+  }
+  
+  .cards:hover{
+    box-shadow: 5px 5px 10px;
+  }
+  
+  
+  
+  .card_info{
+    margin-top: 5px;
+
+}
+  
+  .card img{
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  
+  }
+
+  .card_name{
+      font-size: x-large;
+  }
+  
+  button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+  }
+  button:hover{
+   background-color:  rgb(25, 226, 226);
+    transition: .5s;
+  }
+  .card_contact{
+      padding: 2px;
+      margin-left:150px;
+      border-radius: 5px;
+      background-color: rgb(28, 224, 28);
+      color: white;
+  }
+
+  .card_price{
+
+      font-size: large;
+  }
+  
+  .buy_heading{
+    text-align: center;
+    padding: 30px;
+    text-transform: capitalize;
+    
+  }
+
+  /*------------------- Price prediction CSS-----------------------*/
+
+  .prediction{
+      color:  rgb(25, 226, 226);
+      
+
+  }
+
+
+  /*------------------- Advices and Reviews CSS-----------------------*/
+
+  .advices_color1{
+      background-color: aliceblue;
+      padding: 1.5rem;
+  }
+
+  .advices_color2{
+    background-color: aliceblue;
+    padding: 1.5rem;
+}
+
+.advices_color3{
+    color: red;
+    font-weight: bold;
+}
+
+.advices_color4{
+    padding-right: 5rem;
+    padding-left: 5rem;
+}
+
+.advices_color5{
+    padding-left: 5rem;
+}
+
+.advices_color6{
+    background-color: grey;
+}
+
+  
+
+
+

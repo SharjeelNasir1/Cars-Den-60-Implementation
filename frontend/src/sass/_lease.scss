@@ -1,0 +1,71 @@
+// .Lease {
+//   background-color: yellow;
+//   grid-column: col-start 5 / full-end;
+//   margin: 0 10px 5px 2.5px;
+//   &__content {
+//     color: black;
+//     padding: 7vw 9vw;
+
+//     display: grid;
+//     align-content: center;
+//     justify-items: start;
+//   }
+// }
+
+.card1 {
+  &__auction {
+    background-image: linear-gradient(
+        rgba($color-secondary, 0.1),
+        rgba($color-secondary, 0.8)
+      ),
+      url(../images/carimage4.jpg);
+    background-size: cover;
+    background-position: center;
+    // background-color: rgb(0, 0, 0);
+    color: white;
+    grid-column: full-start / col-end 4;
+    margin: 0.5rem 0.5rem 0.5rem 1rem;
+    padding: 6rem 8vw;
+
+    // &__img--1 {
+    //   width: 100%;
+    //   grid-row: 2 / 6;
+    //   grid-column: 2 / 6;
+    //   box-shadow: 0 2rem 5rem rgba(#000, 0.1);
+    // }
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    */
+
+    display: grid;
+    align-content: center;
+    justify-items: start;
+  }
+  &__Lease {
+    background-image: linear-gradient(
+        rgba($color-secondary, 0.1),
+        rgba($color-secondary, 0.8)
+      ),
+      url(../images/carimage2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+    color: white;
+    grid-column: col-start 5 / full-end;
+    padding: 6rem 8vw;
+    margin: 0.5rem 1rem 0.5rem 0.5rem;
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    */
+
+    display: grid;
+    align-content: center;
+    justify-items: start;
+  }
+}

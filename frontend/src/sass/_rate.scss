@@ -1,0 +1,55 @@
+// .rate {
+//   background-color: pink;
+//   grid-column: full-start/col-end 4;
+//   margin: 0 10px 5px 10px;
+// }
+.card2 {
+  &__rate {
+    background-image: linear-gradient(
+        rgba($color-secondary, 0.1),
+        rgba($color-secondary, 0.8)
+      ),
+      url(../images/carimage3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: grey;
+    color: white;
+    grid-column: full-start / col-end 4;
+    padding: 6rem 8vw;
+    margin: 0.5rem 0.5rem 0.5rem 1rem;
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    */
+
+    display: grid;
+    align-content: center;
+    justify-items: start;
+  }
+  &__rent {
+    background-image: linear-gradient(
+        rgba($color-secondary, 0.1),
+        rgba($color-secondary, 0.8)
+      ),
+      url(../images/carimage6.jpg);
+    background-size: cover;
+    color: white;
+    background-position: center;
+    background-color: purple;
+    grid-column: col-start 5 / full-end;
+    padding: 6rem 8vw;
+    margin: 0.5rem 1rem 0.5rem 0.5rem;
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    */
+
+    display: grid;
+    align-content: center;
+    justify-items: start;
+  }
+}

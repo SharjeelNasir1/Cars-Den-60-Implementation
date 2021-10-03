@@ -1,0 +1,10 @@
+.Buy {
+  grid-column: full-start/full-end;
+  background-color: rgb(255, 255, 255);
+  margin: 0.5rem 0rem 0.5rem 0rem;
+  display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  padding: 5rem 10rem 5rem 10rem;
+}
