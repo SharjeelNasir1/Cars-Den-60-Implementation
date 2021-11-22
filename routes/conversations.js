@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const {createConv,getConv,getOneConv} = require("../controller/Conversations");
+const {createConv,getConv,getOneConv} = require("../controller/conversations");
 
 //new conv
 

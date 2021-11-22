@@ -11,7 +11,7 @@ import Navbar1 from "./Home/Navbar1";
 import Home1 from "./Home/Home1";
 import Footer from "./Home/Footer";
 import Advices from "./Advices/Advices";
-import Notifications from "./rent/Notification/Notifications";
+//import Notifications from "./rent/Notification/Notifications";
 import Buy from "./Advertisement/Buy";
 import BuyDetails from "./Advertisement/BuyDetails";
 import Login from "./Authentication/Login/Login";
@@ -30,7 +30,13 @@ import Rent from "./rent/renter/RentAds/Rent";
 import RentAdDetails from "./rent/renter/RentAdDetails/RentAdDetails";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Messenger from "./messenger/Messenger";
+import displayads from './displayads/displayads'
+import viewad from './viewad/viewad'
 import NearbyWorkShops from "./WorkshopsNearMe/NearbyWorkShops";
+import RentCar from "./rentcar/rentCar";
+import displayhostings from './displayhostings/displayhostings'
+import viewhosting from './viewhosting/viewhosting'
+import Notifications from "./notifications/notifications"
 // import Chat from "./Chat";
 // import Advices from "./Advices";
 import Rate from "./RateAnticipator/Rate";
@@ -44,6 +50,7 @@ const App = () => {
   const [islogged, setIslogged] = useState(data ? true : false);
   const [email2, setEmail2] = useState(data ? data.email : "Login");
   const [userid, setUserid] = useState(data ? data._id : "eww");
+  const [phoneno,setPhoneno]=useState(data?data.phoneno:"")
   const logout = () => {
     setIslogged(false);
     setUser("");
@@ -58,6 +65,7 @@ const App = () => {
     user: user,
     islogged: islogged,
     userid: userid,
+    phoneno:phoneno
   };
   return (
     <React.Fragment>
@@ -93,6 +101,7 @@ const App = () => {
                 setEmail2={setEmail2}
                 setUser={setUser}
                 setIslogged={setIslogged}
+                setPhoneno={setPhoneno}
               />
             </Route>
 
@@ -102,9 +111,13 @@ const App = () => {
             <Route path="/post/:id" component={Post} />
             <Route path={`/editselladds/:id`} exact component={EditAdds} />
             <Route path={`/add/:id`} exact component={AddDetails} />
-            <Route path="/buy" component={Buy} />
+            {/* <Route path="/buy" component={Buy} /> */}
             <Route path={`/buyadds/:id`} exact component={BuyDetails} />
-
+            <Route path="/buy" component={displayads}/>
+            <Route path="/viewad" component = {viewad}/>
+            <Route path={"/rentcar"} exact component={RentCar} />
+            <Route path="/displayhostings" component={displayhostings}/>
+            <Route path="/viewhosting" component = {viewhosting}/>
             <Route path="/leasepost/:id" component={LeasePost} />
             <Route path="/myleasedads/:id" component={MyLeasedAds} />
             <Route
@@ -114,7 +127,7 @@ const App = () => {
             <Route path="/editleasedads/:id" component={EditLeasedAds} />
             <Route path="/rent/:id" component={Rent} />
             <Route path="/rentadsdetails/:id" component={RentAdDetails} />
-            <Route path="/notifications/:id" component={Notifications} />
+            <Route path="/notifications" component={() => (<Notifications user_id={userid} />)}/>
             <Route path="/chat" component={Messenger} />
             <Route path="/ratecheck" component={Rate} />
             {/* <Route path="/card/Rent-it" component={Rent} /> */}
@@ -124,7 +137,7 @@ const App = () => {
             <Route path="/advices&reviews" component={Advices} />
           </Switch>
         </UserContext.Provider>
-        <Footer />
+        {/* <Footer /> */}
       </ThemeProvider>{" "}
     </React.Fragment>
   );

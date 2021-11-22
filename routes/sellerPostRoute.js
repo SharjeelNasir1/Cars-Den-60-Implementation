@@ -58,11 +58,22 @@ router.route("/add/:id").get((req, res) => {
     .catch((err) => res.status(400).json("Error" + err));
 });
 router.route("/adddetails/:id").get((req, res) => {
+  console.log(req.params.id)
   sellForm
     .findById(req.params.id)
     .then((response) => res.json(response))
     .catch((err) => res.status(400).json("Error" + err));
 });
+router.route("/displayads/:city/:transmission").get(async(req,res) => {
+  try {
+      console.log(req.params)
+      const posts = await sellForm.find({city: req.params.city, trans: req.params.transmission})
+      console.log(Object.keys(posts).length)
+      res.status(200).json({posts:Object.values(posts)})
+  } catch (error) {
+      res.status(404).json({msg: error.message})
+  }
+})
 router.route("/editselladds/:id").post((req, res) => {
   sellForm
     .findById(req.params.id)

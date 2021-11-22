@@ -158,6 +158,18 @@ const Navbar = ({ user, islogged, openProfile, logout }) => {
         <Tab
           className={classes.tabLeft}
           component={Link}
+          to="/rentCar"
+          label="Rent a Car"
+        />
+        <Tab
+          className={classes.tabLeft}
+          component={Link}
+          to="/buy"
+          label="Buy"
+        />
+        {/* <Tab
+          className={classes.tabLeft}
+          component={Link}
           to="/about"
           label="About Us"
         />
@@ -166,7 +178,8 @@ const Navbar = ({ user, islogged, openProfile, logout }) => {
           component={Link}
           to="/contact"
           label="Contact Us"
-        />
+        /> */}
+
       </Tabs>
 
       {islogged ? (
@@ -175,7 +188,7 @@ const Navbar = ({ user, islogged, openProfile, logout }) => {
             className={classes.tabRight}
             icon={<NotificationsNoneIcon />}
             component={Link}
-            to={"/notifications/" + value12.userid}
+            to={"/notifications"}
           />
           <Tab
             className={classes.tabRight}
@@ -278,7 +291,7 @@ const Navbar = ({ user, islogged, openProfile, logout }) => {
               Services
             </ListItemText>
           </ListItem>
-          <ListItem
+          {/* <ListItem
             onClick={() => setOpenDrawer(false)}
             divider
             button
@@ -299,16 +312,39 @@ const Navbar = ({ user, islogged, openProfile, logout }) => {
             <ListItemText className={classes.drawerItem} disableTypography>
               Contact Us
             </ListItemText>
+          </ListItem> */}
+          <ListItem
+            onClick={() => setOpenDrawer(false)}
+            divider
+            button
+            component={Link}
+            to="/rentcar"
+          >
+            <ListItemText className={classes.drawerItem} disableTypography>
+              Rent a Car
+            </ListItemText>
+          </ListItem>
+          <ListItem
+            onClick={() => setOpenDrawer(false)}
+            divider
+            button
+            component={Link}
+            to="/buy"
+          >
+            <ListItemText className={classes.drawerItem} disableTypography>
+              Buy
+            </ListItemText>
           </ListItem>
         </List>
         {islogged ? (
           <List disablePadding>
+            
             <ListItem
               divider
               onClick={() => setOpenDrawer(false)}
               button
               component={Link}
-              to={"/notifications/" + value12.userid}
+              to={"/notifications"}
             >
               <ListItemText className={classes.drawerItem} disableTypography>
                 Notifications

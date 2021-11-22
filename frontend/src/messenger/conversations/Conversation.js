@@ -30,7 +30,7 @@ export default function Conversation({ conversation, currentUser, active }) {
         <div className={"conversation" + (active ? "active" : "")}>
           <div className={"conv" + (active ? "active" : "")}>
             <img className="conversationImg" src={image} alt="" />
-            <span className="conversationName">{user?.name}</span>
+            <span className="conversationName">{user?.email}</span>
           </div>
           <span className="conversationTitle">{conversation.title}</span>
         </div>

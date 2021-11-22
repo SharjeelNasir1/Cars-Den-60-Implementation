@@ -22,14 +22,14 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 function Rent() {
   const value12 = useContext(UserContext);
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Islamabad");
   const [carInfo, setCarInfo] = useState("");
   const [color, setColor] = useState("");
   const [engineCc, setEngineCc] = useState("");
   const [engineType, setEngineType] = useState("");
-  const [assembly, setAssembly] = useState("");
+  const [assembly, setAssembly] = useState("Local");
   const [price, setPrice] = useState("");
-  const [trans, setTrans] = useState("");
+  const [trans, setTrans] = useState("Automatic");
   const [profile, setProfile] = useState([]);
   const postUpdate = async () => {
     const body = {
@@ -43,10 +43,13 @@ function Rent() {
       price: price,
       photo: profile[0].getFileEncodeBase64String(),
       photoType: profile[0].fileType,
-      userid: value12.userid,
+      user: value12.userid,
+      email:value12.email2,
+      phoneno:value12.phoneno
     };
+
     console.log(body);
-    axios.post("http://localhost:5000/leaserpost", body);
+    axios.post("http://localhost:5000/host/posthosting", body);
     console.log("gaya khtm tata ");
   };
 
@@ -61,12 +64,18 @@ function Rent() {
         <div className="ui segment">
           <form className="ui form">
             <label>City</label>
-            <input
-              type="text"
+            <select
               value={city}
-              onChange={(event) => setCity(event.target.value)}
+              onChange={(e) => setCity(e.target.value)}
               required
-            />{" "}
+            >
+              <option value="Islamabad">Islamabad</option>
+              <option value="Lahore">Lahore</option>
+              <option value="Rawalpindi">Rawalpindi</option>
+              <option value="Karachi">Karachi</option>
+              <option value="Faisalabad">Faisalabad</option>
+              
+            </select>{" "}
             <label>Color</label>
             <select
               value={color}

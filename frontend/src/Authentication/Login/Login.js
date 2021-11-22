@@ -3,7 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 // import './logincss.css'
 
-const Login = ({ setUser, setUserid, setEmail2, setIslogged }) => {
+const Login = ({ setUser, setUserid, setEmail2,setPhoneno, setIslogged }) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState(null);
@@ -50,6 +50,7 @@ const Login = ({ setUser, setUserid, setEmail2, setIslogged }) => {
           setUser(response.data.name);
           setEmail2(response.data.email);
           setUserid(response.data._id);
+          setPhoneno(response.data.phoneno)
           localStorage.setItem("data", JSON.stringify(response.data));
           setIslogged(true);
           history.push("/");

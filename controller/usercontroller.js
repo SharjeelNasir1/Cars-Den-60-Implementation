@@ -60,6 +60,7 @@ exports.signin = function (req, res) {
               email: collection.email,
               _id: collection._id,
               name: collection.name,
+              phoneno:collection.phoneno
             });
           } else {
             return res.send({

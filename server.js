@@ -9,6 +9,7 @@ const requestrouter = require("./routes/requests");
 const conversationRoute = require("./routes/conversations");
 const messageRoute = require("./routes/messages");
 const predictrouter = require("./routes/prediction.js");
+const hostingrouter = require ("./routes/hostings.js")
 // const db = require("./config/config");
 const cors = require("cors");
 const app = express();
@@ -16,24 +17,29 @@ const bookRouter = require("./routes/books");
 const mongoose = require("mongoose");
 
 app.use(cors());
-app.use(express.json());
+//app.use(express.json());
+
 
 // app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
+//app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 mongoose.connect(
   "mongodb+srv://moorrooch:1234@cluster0.sktno.mongodb.net/practiceDB",
   { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false },
   () => console.log("DB connected")
 );
+app.use(bodyParser.json({ limit: '30mb', extended: true }))
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
+app.use(cors());
 
-app.use(express.json({ limit: "50mb" }));
-app.use(express.static("./public"));
+// app.use(express.json({ limit: "50mb" }));
+// app.use(express.static("./public"));
 app.use("/predict", predictrouter);
 app.use(userrouter);
 app.use(rentrouter);
 app.use(requestrouter);
 app.use("/messages", messageRoute);
 app.use("/conversations", conversationRoute);
+app.use('/host', hostingrouter)
 
 app.use("/books", bookRouter);
 app.use("/", require("./routes/sellerPostRoute"));
